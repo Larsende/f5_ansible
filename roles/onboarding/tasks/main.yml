@@ -1,8 +1,4 @@
 ---
-- include: bigip_license/license.yml 
-  vars:
-    - key: "TNCDO-GRKLJ-HVWUT-XCGTD-EFJJFNQ"
-
 - include: bigip_vlan/add_untagged_vlan.yml 
   vars:
     - name: "external" 
@@ -11,8 +7,8 @@
 ## bug - https://github.com/mcgonagle/ansible_f5/issues/17
 - include: bigip_selfip/add_selfip.yml 
   vars:
-    - name: "10.0.1.10" 
-    - address: "10.0.1.10" 
+    - name: "10.1.10.10" 
+    - address: "10.1.10.10" 
     - netmask: "255.255.255.0"
     - vlan_name: "external" 
     - route_domain: "0" 
@@ -26,8 +22,8 @@
 ## bug - https://github.com/mcgonagle/ansible_f5/issues/17
 - include: bigip_selfip/add_selfip.yml 
   vars:
-    - name: "10.0.2.10" 
-    - address: "10.0.2.10" 
+    - name: "10.1.20.10" 
+    - address: "10.1.20.10" 
     - netmask: "255.255.255.0" 
     - vlan_name: "internal" 
     - route_domain: "0" 
@@ -55,9 +51,9 @@
 
 - include: bigip_user/add_user.yml 
   vars:
-    - username_credential: "tom" 
+    - username_credential: "david" 
     - password_credential: "password" 
-    - full_name: "Thomas A. McGonagle" 
+    - full_name: "David E. Larsen" 
     - partition_access: "all:admin" 
     - update_password: "on_create"
 

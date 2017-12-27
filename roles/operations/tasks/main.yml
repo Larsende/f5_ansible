@@ -4,7 +4,7 @@
 ############
 - include: bigip_node/add_node.yml 
   vars: 
-    - host: "10.0.2.167" 
+    - host: "10.1.20.167" 
     - name: "member1" 
     - monitor: "/Common/icmp"
   when: state == "present"
@@ -22,8 +22,8 @@
     - port: "8080"
   when: state == "present"
 
-- include: bigip_irule/manage_irule.yml
-  when: state == "present"
+  #- include: bigip_irule/manage_irule.yml
+  #when: state == "present"
 
 - include: bigip_monitor_tcp/manage_tcp_monitor.yml
   when: state == "present"
@@ -34,7 +34,7 @@
 - include: bigip_virtual_server/manage_vip.yml 
   vars:
     - description: "foo-vip" 
-    - destination: "10.0.2.183" 
+    - destination: "10.1.20.183" 
     - name: "vip1" 
     - pool: "pool1" 
     - port: "80" 
@@ -55,7 +55,7 @@
 - include: bigip_virtual_server/manage_vip.yml
   vars:
     - description: "foo-vip" 
-    - destination: "10.0.2.183" 
+    - destination: "10.1.20.183" 
     - name: "vip1" 
     - pool: "pool1" 
     - port: "80" 
