@@ -1,0 +1,18 @@
+- hosts: bigip
+  tasks:
+  - name: Add VLAN net1 as untagged to interfaces 1.1
+    bigip_vlan:
+      user: "{{ username }}"
+      password: "{{ password }}"
+      server: "{{ inventory_hostname }}"
+      untagged_interfaces: "1.1"
+      name: "external"
+      validate_certs: "no"
+    bigip_vlan:
+      user: "{{ username }}"
+      password: "{{ password }}"
+      server: "{{ inventory_hostname }}"
+      untagged_interfaces: "1.2"
+      name: "internal"
+      validate_certs: "no"
+    delegate_to: localhost
