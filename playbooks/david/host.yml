@@ -1,0 +1,10 @@
+--- 
+- hosts: bigip
+  user: root
+  gather_facts: no
+  tasks:
+    - include: set_hostname.yml
+      vars:
+          inventory_hostname: bigip
+          hostname: testF5.f5demo.local
+...
